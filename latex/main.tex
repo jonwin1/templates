@@ -1,0 +1,145 @@
+\documentclass[10pt, titlepage, oneside, a4paper]{article}
+%\usepackage[swedish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[titletoc]{appendix}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, graphicx, fancyhdr}
+\usepackage{amsmath}
+\usepackage{amsthm,algorithm,algorithmic,yhmath,enumitem,lscape}
+\usepackage{float}
+\usepackage{hyperref, url}
+\usepackage{minted}
+\usepackage{listings}
+
+\newmintinline{c}{}
+
+\addtolength{\textheight}{20mm}
+\addtolength{\voffset}{-5mm}
+%\renewcommand{\sectionmark}[1]{\markleft{#1}}
+
+\def\typeofdoc{Project}
+\def\course{coursename}
+\def\pretitle{Pretitle}
+\def\title{Title}
+\def\name{Jonatan Wincent}
+\def\username{jowi0310, c22jwt}
+\def\email{\musername{}@cs.umu.se}
+% \def\path{path}
+% \def\graders{Graders}
+
+\def\mfullpath{\raisebox{1pt}{$\scriptstyle \sim$}\musername/\path}
+\def\nfullpath{\raisebox{1pt}{$\scriptstyle \sim$}\nusername/\path}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rnn}{\mathbb{R}^{n \times n}}
+\newcommand{\bes}{\begin{equation*}}
+\newcommand{\ees}{\end{equation*}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bms}{\begin{multline*}}
+\newcommand{\emults}{\end{multline*}}
+\newcommand{\bbm}{\begin{bmatrix}}
+\newcommand{\ebm}{\end{bmatrix}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\fl}{\text{fl}}
+\newcommand{\Lp}{{L^p}}
+\newcommand{\Ker}{\text{Ker}\,}
+\newcommand{\loc}{{\text{loc}}}
+\newcommand{\ccinf}{C_c^\infty}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\dist}{\text{dist}}
+
+
+\begin{document}
+\begin{titlepage}
+	\thispagestyle{empty}
+	\begin{large}
+		\textbf{\hfill \today} \\
+	\end{large}
+	\vspace{25mm}
+	\begin{center}
+		\LARGE{\pretitle} \\
+		\huge{\textbf{\course}}\\
+		\vspace{10mm}
+		\LARGE{\title} \\
+		\vspace{15mm}
+		% \LARGE{version 1.0} \\
+		\vspace{10mm}
+		\begin{large}
+			\begin{tabular}{ll}
+				\textbf{Name}     & \name     \\
+				\textbf{Username} & \username \\
+				% \textbf{Sourcecode} & \path
+			\end{tabular}
+		\end{large}
+		% \vfill
+		% \vfill
+		% \large{\textbf{Graders}}\\
+		% \mbox{\large{\graders}}
+	\end{center}
+\end{titlepage}
+
+% fixar sidfot
+\lfoot{\footnotesize{\name, \username}}
+\rfoot{\footnotesize{\today}}
+\lhead{\sc\footnotesize\title}
+\rhead{\nouppercase{\sc\footnotesize\leftmark}}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+
+% skapar innehållsförteckning.
+% Tänk på att köra latex 2ggr för att uppdatera allt
+\pagenumbering{roman}
+\tableofcontents
+% och lägger in en sidbrytning
+\newpage
+
+\pagenumbering{arabic}
+
+% i Sverige har vi normalt inget indrag vid nytt stycke
+\setlength{\parindent}{0pt}
+% men däremot lite mellanrum
+\setlength{\parskip}{10pt}
+
+\section{First section}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{example-image-a}
+		\caption{}
+		\label{fig:}
+	\end{figure}
+
+	\begin{equation}
+		A \geq \frac{A}{B}
+		\label{equ:}
+	\end{equation}
+
+	\subsection{First subsection}
+
+		\begin{minted}[frame=lines, framesep=2mm, fontsize=\footnotesize,
+		linenos=true]{cpp}
+int main()
+{
+	std::cout << "Hello, world!\n";
+}
+		\end{minted}
+
+		\begin{table}[H]
+			\centering
+			\small
+			\begin{tabular}{|c|c|}
+				\hline
+				a & b \\
+				\hline
+				1 & 2 \\
+				\hline
+			\end{tabular}
+			\caption{}
+			\label{tab:}
+		\end{table}
+
+\end{document}
