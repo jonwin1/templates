@@ -1,0 +1,47 @@
+---
+BasedOnStyle: Mozilla
+AccessModifierOffset: -4
+AlignArrayOfStructures: Right
+AlignEscapedNewlines: Left
+AllowShortFunctionsOnASingleLine: None
+AlwaysBreakAfterDefinitionReturnType: None
+BinPackArguments: true
+BinPackParameters: true
+BraceWrapping:
+  AfterCaseLabel:  false
+  AfterClass: false
+  AfterControlStatement: Never
+  AfterEnum: false
+  AfterExternBlock: false
+  AfterFunction: true
+  AfterNamespace:  false
+  AfterObjCDeclaration: false
+  AfterStruct: false
+  AfterUnion: false
+  BeforeCatch:     false
+  BeforeElse:      false
+  BeforeLambdaBody: false
+  BeforeWhile:     false
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakAfterReturnType: AllDefinitions
+# BreakArrays: false
+BreakBeforeBraces: Custom
+BreakTemplateDeclarations: false
+ConstructorInitializerIndentWidth: 8
+ContinuationIndentWidth: 8
+IndentCaseLabels: false
+IndentGotoLabels: false
+IndentWidth: 8
+InsertBraces: true
+KeepEmptyLines:
+  AtEndOfFile: false
+  AtStartOfBlock: false
+  AtStartOfFile: false
+ObjCBlockIndentWidth: 8
+PointerAlignment: Right
+SeparateDefinitionBlocks: Always
+# UseTab: Always
+...
