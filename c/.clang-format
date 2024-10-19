@@ -6,14 +6,26 @@ AlignEscapedNewlines: Left
 AllowShortFunctionsOnASingleLine: None
 AlwaysBreakAfterDefinitionReturnType: None
 BinPackArguments: true
-BinPackParameters: BinPack
+BinPackParameters: true
 BraceWrapping:
+  AfterCaseLabel:  false
   AfterClass: false
+  AfterControlStatement: Never
   AfterEnum: false
+  AfterExternBlock: false
+  AfterFunction: true
+  AfterNamespace:  false
+  AfterObjCDeclaration: false
   AfterStruct: false
   AfterUnion: false
-  AfterExternBlock: false
+  BeforeCatch:     false
+  BeforeElse:      false
+  BeforeLambdaBody: false
+  BeforeWhile:     false
+  IndentBraces:    false
+  SplitEmptyFunction: true
   SplitEmptyRecord: true
+  SplitEmptyNamespace: true
 BreakAfterReturnType: AllDefinitions
 # BreakArrays: false
 BreakBeforeBraces: Custom
