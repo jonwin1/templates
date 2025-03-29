@@ -14,31 +14,39 @@
           "aarch64-linux"
           "aarch64-darwin"
         ] (system: function nixpkgs.legacyPackages.${system});
+
+      # Build-time dependencies
+      nativeBuildInputs = forAllSystems (
+        pkgs: with pkgs; [
+          go
+          gopls
+        ]
+      );
+
+      # Run-time dependencies
+      buildInputs = forAllSystems (
+        pkgs: with pkgs; [
+        ]
+      );
     in
     {
       packages = forAllSystems (pkgs: {
         default = pkgs.buildGoModule {
           pname = ""; # TODO: Package name
-          version = self.shortRev or self.dirtyShortRev;
           src = ./.;
-          nativeBuildInputs = with pkgs; [ ]; # TODO: Build-time dependencies
-          buildInputs = with pkgs; [ ]; # TODO: Run-time dependencies
+
+          inherit nativeBuildInputs buildInputs;
+
+          # Hash of the dependencies
           vendorHash = pkgs.lib.fakeHash;
-          # vendorHash = ""; # TODO: Set vendor hash
         };
       });
 
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            go
-            gopls
-            go-tools
-            gotools
-
-            # TODO: Development dependencies
-          ];
-        };
-      });
+      devShells.default = forAllSystems (
+        pkgs:
+        pkgs.mkShell {
+          inherit nativeBuildInputs buildInputs;
+        }
+      );
     };
 }
