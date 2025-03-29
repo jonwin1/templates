@@ -35,14 +35,14 @@
         in
         {
           default = pkgs.buildGoModule {
-            pname = "main"; # TODO: Package name
+            name = "main";
             src = ./.;
 
             buildInputs = deps.buildInputs;
             nativeBuildInputs = deps.nativeBuildInputs;
 
             # Hash of the dependencies
-            vendorHash = "";
+            vendorHash = null;
           };
         }
       );
