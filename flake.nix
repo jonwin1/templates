@@ -9,13 +9,17 @@
           path = ./c;
           description = "C template";
         };
+        go = {
+          path = ./go;
+          description = "Go template";
+        };
         latex = {
           path = ./latex;
           description = "Latex template";
         };
-        go = {
-          path = ./go;
-          description = "Go template";
+        python = {
+          path = ./python;
+          description = "Python template";
         };
       };
     };
