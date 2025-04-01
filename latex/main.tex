@@ -8,10 +8,6 @@
 \usepackage{amsthm,algorithm,algorithmic,yhmath,enumitem,lscape}
 \usepackage{float}
 \usepackage{hyperref, url}
-\usepackage{minted}
-\usepackage{listings}
-
-\newmintinline{c}{}
 
 \addtolength{\textheight}{20mm}
 \addtolength{\voffset}{-5mm}
@@ -102,43 +98,5 @@
 \setlength{\parindent}{0pt}
 % men däremot lite mellanrum
 \setlength{\parskip}{10pt}
-
-\section{First section}
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.9\textwidth]{example-image-a}
-		\caption{}
-		\label{fig:}
-	\end{figure}
-
-	\begin{equation}
-		A \geq \frac{A}{B}
-		\label{equ:}
-	\end{equation}
-
-	\subsection{First subsection}
-
-		\begin{minted}[frame=lines, framesep=2mm, fontsize=\footnotesize,
-		linenos=true]{cpp}
-int main()
-{
-	std::cout << "Hello, world!\n";
-}
-		\end{minted}
-
-		\begin{table}[H]
-			\centering
-			\small
-			\begin{tabular}{|c|c|}
-				\hline
-				a & b \\
-				\hline
-				1 & 2 \\
-				\hline
-			\end{tabular}
-			\caption{}
-			\label{tab:}
-		\end{table}
 
 \end{document}
