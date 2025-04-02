@@ -11,21 +11,43 @@
           "x86_64-darwin"
           "aarch64-linux"
           "aarch64-darwin"
-        ] (system: function nixpkgs.legacyPackages.${system});
+        ] (system: function { pkgs = import nixpkgs { inherit system; }; });
 
     in
     {
-      packages = forAllSystems (pkgs: {
-        default = pkgs.callPackage ./package.nix { };
-      });
+      packages = forAllSystems (
+        { pkgs }:
+        {
+          default = pkgs.stdenv.mkDerivation {
+            name = "main";
+            src = ./.;
+
+            buildInputs = with pkgs; [
+              texliveFull
+            ];
+
+            buildPhase = ''
+              mkdir -p .cache/latex
+              latexmk -auxdir=.cache/latex -pdf main.tex
+            '';
+
+            installPhase = ''
+              mkdir -p $out/bin
+              cp main.pdf $out/bin
+            '';
+          };
+        }
+      );
 
       devShells = forAllSystems (
-        pkgs:
-        pkgs.mkShell {
-          buildInputs = with pkgs; [
-            texliveFull
-            texlab
-          ];
+        { pkgs }:
+        {
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              texliveFull
+              texlab
+            ];
+          };
         }
       );
     };

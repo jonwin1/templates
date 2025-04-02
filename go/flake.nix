@@ -13,7 +13,7 @@
           "x86_64-darwin"
           "aarch64-linux"
           "aarch64-darwin"
-        ] (system: function nixpkgs.legacyPackages.${system});
+        ] (system: function { pkgs = import nixpkgs { inherit system; }; });
 
       commonDeps = pkgs: {
         # Run-time dependencies
@@ -29,7 +29,7 @@
     in
     {
       packages = forAllSystems (
-        pkgs:
+        { pkgs }:
         let
           deps = commonDeps pkgs;
         in
@@ -48,7 +48,7 @@
       );
 
       devShells = forAllSystems (
-        pkgs:
+        { pkgs }:
         let
           deps = commonDeps pkgs;
         in
