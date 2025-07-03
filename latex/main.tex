@@ -1,102 +1,94 @@
-\documentclass[10pt, titlepage, oneside, a4paper]{article}
-%\usepackage[swedish]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[titletoc]{appendix}
+% Preview with continuous updates:
+% latexmk -shell-escape -pvc -pdf main.tex
+
+\documentclass[
+	11pt,
+	% titlepage,
+	a4paper
+]{article}
+
+% --- Language and encoding ---
 \usepackage[utf8]{inputenc}
-\usepackage{amssymb, graphicx, fancyhdr}
-\usepackage{amsmath}
-\usepackage{amsthm,algorithm,algorithmic,yhmath,enumitem,lscape}
-\usepackage{float}
-\usepackage{hyperref, url}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
 
-\addtolength{\textheight}{20mm}
-\addtolength{\voffset}{-5mm}
-%\renewcommand{\sectionmark}[1]{\markleft{#1}}
+% --- Math and symbols ---
+% \usepackage{amsmath, amssymb}
+% \usepackage{graphicx}
+% \usepackage{float}
 
-\def\course{coursename}
-\def\pretitle{Pretitle}
-\def\title{Title}
-\def\name{Jonatan Wincent}
-\def\username{jowi0310, c22jwt}
-\def\email{\musername{}@cs.umu.se}
-% \def\path{path}
-% \def\graders{Graders}
+% --- Formatting and lists ---
+% \usepackage{enumitem}
+\usepackage{minted}
 
-\def\mfullpath{\raisebox{1pt}{$\scriptstyle \sim$}\musername/\path}
-\def\nfullpath{\raisebox{1pt}{$\scriptstyle \sim$}\nusername/\path}
+% --- Links ---
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\Rnn}{\mathbb{R}^{n \times n}}
-\newcommand{\bes}{\begin{equation*}}
-\newcommand{\ees}{\end{equation*}}
-\newcommand{\be}{\begin{equation}}
-\newcommand{\ee}{\end{equation}}
-\newcommand{\bms}{\begin{multline*}}
-\newcommand{\emults}{\end{multline*}}
-\newcommand{\bbm}{\begin{bmatrix}}
-\newcommand{\ebm}{\end{bmatrix}}
-\newcommand{\eps}{\epsilon}
-\newcommand{\fl}{\text{fl}}
-\newcommand{\Lp}{{L^p}}
-\newcommand{\Ker}{\text{Ker}\,}
-\newcommand{\loc}{{\text{loc}}}
-\newcommand{\ccinf}{C_c^\infty}
-\newcommand{\supp}{\text{supp}}
-\newcommand{\dist}{\text{dist}}
+% --- Header and Footer ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\sc\footnotesize\reporttitle}
+\rhead{\nouppercase{\sc\footnotesize\leftmark}}
+\lfoot{\footnotesize
+	\name
+	% , \nameb
+}
+\rfoot{\footnotesize\today}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
+% --- Paragraph spacing ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+% --- Title variables ---
+\newcommand{\coursecode}{5DV123}
+\newcommand{\coursename}{Course Name}
+\newcommand{\reporttitle}{Assignment Title}
+\newcommand{\name}{Jonatan Wincent}
+\newcommand{\email}{c22jwt@cs.umu.se}
+% \newcommand{\nameb}{name}
+% \newcommand{\emailb}{email}
+
+\title{
+	\huge \textbf{\reporttitle}\\
+	\Large \textbf{\coursecode{} - \coursename}
+}
+\author{
+	\name \\
+	\texttt{\email}
+	% \and
+	% \nameb \\
+	% \texttt{\emailb}
+}
 
 \begin{document}
-\begin{titlepage}
-	\thispagestyle{empty}
-	\begin{large}
-		\textbf{\hfill \today} \\
-	\end{large}
-	\vspace{25mm}
-	\begin{center}
-		\LARGE{\pretitle} \\
-		\huge{\textbf{\course}}\\
-		\vspace{10mm}
-		\LARGE{\title} \\
-		\vspace{15mm}
-		% \LARGE{version 1.0} \\
-		\vspace{10mm}
-		\begin{large}
-			\begin{tabular}{ll}
-				\textbf{Name}     & \name     \\
-				\textbf{Username} & \username \\
-				% \textbf{Sourcecode} & \path
-			\end{tabular}
-		\end{large}
-		% \vfill
-		% \vfill
-		% \large{\textbf{Graders}}\\
-		% \mbox{\large{\graders}}
-	\end{center}
-\end{titlepage}
 
-% fixar sidfot
-\lfoot{\footnotesize{\name, \username}}
-\rfoot{\footnotesize{\today}}
-\lhead{\sc\footnotesize\title}
-\rhead{\nouppercase{\sc\footnotesize\leftmark}}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0.2pt}
-\renewcommand{\footrulewidth}{0.2pt}
+% --- Title Page ---
+\maketitle
 
-% skapar innehållsförteckning.
-% Tänk på att köra latex 2ggr för att uppdatera allt
-\pagenumbering{roman}
-\tableofcontents
-% och lägger in en sidbrytning
-\newpage
+% --- Abstract ---
+% \begin{abstract}
+% \end{abstract}
 
-\pagenumbering{arabic}
+% --- Table of Contents ---
+% \pagenumbering{roman}
+% \tableofcontents
+% \newpage
+% \pagenumbering{arabic}
 
-% i Sverige har vi normalt inget indrag vid nytt stycke
-\setlength{\parindent}{0pt}
-% men däremot lite mellanrum
-\setlength{\parskip}{10pt}
+% --- Main Content ---
+
+\section{Section}
+text
+
+% --- Appendices ---
+%\appendix
+%\section{Appendix}
+% appendix content
+
+% --- References ---
+% \bibliographystyle{ieeetr}
+% \bibliography{refs}
 
 \end{document}
