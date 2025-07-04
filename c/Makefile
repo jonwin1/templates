@@ -1,32 +1,31 @@
-# List of source files
-SOURCES = main.c
+# Compiler
+CC := gcc
 
-# Auto created list of object files
-OBJECTS = $(SOURCES:%.c=%.o)
+# Source and object files
+SOURCES := main.c
+OBJECTS := $(SOURCES:.c=.o)
 
-# Compilation flags
-CFLAGS = -Wall -Werror -Wextra -Wpedantic -O2 -march=native
+# Output name
+TARGET := main
 
-# Debug flags
-DFLAGS = -g
+# Compiler and linker flags
+CFLAGS := -Wall -Wextra -Wpedantic -g
+LDFLAGS :=
+LIBS :=
 
-# Linking flags
-LDFLAGS =
+# Default target
+all: $(TARGET)
 
-# Libraries to link
-LIBS =
-
-all: main
-
-# Create executable from object files
-main: $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o main $(LIBS)
+# Link object files to make the final executable
+$(TARGET): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ $(LIBS)
 
 # Compile source files into object files
 %.o: %.c
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Cleanup
+# Clean up
 clean:
-	-rm -fv main
-	-rm -fv $(OBJECTS)
+	@rm -fv $(TARGET) $(OBJECTS)
+
+.PHONY: all clean
