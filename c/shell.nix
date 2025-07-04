@@ -6,6 +6,9 @@ pkgs.mkShell {
     clang-tools
     gnumake
     valgrind
+
+    man-pages
+    man-pages-posix
   ];
 
   shellHook = ''
