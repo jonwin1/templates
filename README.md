@@ -1,6 +1,6 @@
 # Project templates
 
-My collection of templates using nix flakes.
+My collection of project and dev-shell templates for nix.
 
 ## Usage
 
@@ -10,4 +10,6 @@ mkdir project && cd project
 nix flake init -t github:jonwin1/templates#<template>
 ```
 
-If the flake doesn't use flakes just copy the contents of the directory instead.
+To locally ignore the files in a git project where you do not want to push any
+nix files of .gitignore changes add the files to .git/info/exclude. This works
+just like a .gitignore file but only exists locally.
