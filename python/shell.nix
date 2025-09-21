@@ -3,8 +3,7 @@
 }:
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    python3Full
-    python313Packages.numpy
-    jdk24
+    python313
+    #python313Packages.numpy
   ];
 }
