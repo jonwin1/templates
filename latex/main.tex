@@ -3,26 +3,25 @@
 
 \documentclass[
 	11pt,
-	% titlepage,
+	% titlepage, % TODO: Uncomment if a separate title page is needed
 	a4paper
 ]{article}
 
-% --- Language and encoding ---
+% Language and encoding
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[english]{babel} % TODO: Set language
 
-% --- Math and symbols ---
-% \usepackage{amsmath, amssymb}
-% \usepackage{graphicx}
-% \usepackage{float}
+% Figures
+\usepackage{graphicx}
 
-% --- Formatting and lists ---
-% \usepackage{enumitem}
-\usepackage{minted}
+% Use \enquote{} to surround text with the correct quotation marks for the
+% selected language.
+\usepackage{csquotes} 
 
-% --- Links ---
+% Links
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{xurl} % Fixes better line-breaks in links and more.
 
 % --- Header and Footer ---
 \usepackage{fancyhdr}
@@ -31,7 +30,7 @@
 \rhead{\nouppercase{\sc\footnotesize\leftmark}}
 \lfoot{\footnotesize
 	\name
-	% , \nameb
+	% , \nameb % TODO: Uncomment if multiple authors
 }
 \rfoot{\footnotesize\today}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -41,13 +40,18 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{10pt}
 
-% --- Title variables ---
+% Change size of section titles
+% \usepackage{titlesec}
+% \titleformat{\section}
+%   {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+
+% --- Title variables ---  TODO: Set title variables
 \newcommand{\coursecode}{5DV123}
 \newcommand{\coursename}{Course Name}
 \newcommand{\reporttitle}{Assignment Title}
 \newcommand{\name}{Jonatan Wincent}
 \newcommand{\email}{c22jwt@cs.umu.se}
-% \newcommand{\nameb}{name}
+% \newcommand{\nameb}{name} % TODO: Uncomment if multiple authors
 % \newcommand{\emailb}{email}
 
 \title{
@@ -57,7 +61,7 @@
 \author{
 	\name \\
 	\texttt{\email}
-	% \and
+	% \and				% TODO: Uncomment if multiple authors
 	% \nameb \\
 	% \texttt{\emailb}
 }
@@ -80,7 +84,8 @@
 % --- Main Content ---
 
 \section{Section}
-text
+
+Text.
 
 % --- Appendices ---
 %\appendix
