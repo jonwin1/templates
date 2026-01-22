@@ -21,6 +21,10 @@
           path = ./python;
           description = "Python template";
         };
+        jypyter = {
+          path = ./jupyter;
+          description = "Jupyter template";
+        };
       };
     };
 }
