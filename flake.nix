@@ -21,7 +21,7 @@
           path = ./python;
           description = "Python template";
         };
-        jypyter = {
+        jupyter = {
           path = ./jupyter;
           description = "Jupyter template";
         };
