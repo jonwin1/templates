@@ -1,5 +1,5 @@
 {
-  description = "My Nix flake templates";
+  description = "My Nix templates";
 
   outputs =
     { self }:
@@ -32,6 +32,10 @@
         python = {
           path = ./python;
           description = "Python template";
+        };
+        zig = {
+          path = ./zig;
+          description = "Zig template";
         };
       };
     };
