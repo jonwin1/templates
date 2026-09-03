@@ -17,6 +17,10 @@
           path = ./go-package;
           description = "Go package template";
         };
+        java = {
+          path = ./java;
+          description = "Java and maven shell env";
+        };
         jupyter = {
           path = ./jupyter;
           description = "Jupyter template";
