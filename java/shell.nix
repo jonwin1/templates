@@ -6,4 +6,9 @@ pkgs.mkShell {
     jdk
     maven
   ];
+
+  shellHook = ''
+    echo "Initialize a project:"
+    echo "    mvn archetype:generate"
+  '';
 }
