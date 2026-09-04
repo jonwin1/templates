@@ -11,6 +11,6 @@ pkgs.mkShell {
     echo "Initialize a project:"
     echo "    mvn archetype:generate"
     echo "Execute:"
-    echo "    mvn exec:java -Dexec.mainClass=\"package.main.Class\""
+    echo "    mvn compile exec:java -Dexec.mainClass=\"package.main.Class\""
   '';
 }
