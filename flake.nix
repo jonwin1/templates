@@ -1,5 +1,5 @@
 {
-  description = "My Nix flake templates";
+  description = "My Nix templates";
 
   outputs =
     { self }:
@@ -17,6 +17,10 @@
           path = ./go-package;
           description = "Go package template";
         };
+        java = {
+          path = ./java;
+          description = "Java and maven shell env";
+        };
         jupyter = {
           path = ./jupyter;
           description = "Jupyter template";
@@ -32,6 +36,10 @@
         python = {
           path = ./python;
           description = "Python template";
+        };
+        zig = {
+          path = ./zig;
+          description = "Zig template";
         };
       };
     };
