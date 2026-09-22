@@ -1,1 +1,1 @@
-$pdf_previewer = "zathura %O %S &";
+$pdf_previewer = "okular %O %S &";
